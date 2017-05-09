@@ -110,7 +110,7 @@ func CreateHARFromEvents(chromeEvents []*events.ChromeEvent) (*HAR, error) {
 			entry := har.GetEntryByRequestId(params.RequestId)
 			if entry == nil {
 				//log.Fatal("got a response event with no matching request event.")
-				fmt.Println("got a response event with no matching request event.")
+				fmt.Println("got a response event with no matching request event. 1")
 			} else {
 				ProcessResponse(entry, params.Timestamp, params.Response)
 			}
@@ -128,7 +128,7 @@ func CreateHARFromEvents(chromeEvents []*events.ChromeEvent) (*HAR, error) {
 			entry := har.GetEntryByRequestId(params.RequestId)
 			if entry == nil {
 				//log.Fatal("got a response event with no matching request event.")
-				fmt.Println("got a response event with no matching request event.")
+				fmt.Println("got a response event with no matching request event. 2")
 			} else {
 				entry.Response.Content.Size += params.DataLength
 			}
@@ -146,7 +146,7 @@ func CreateHARFromEvents(chromeEvents []*events.ChromeEvent) (*HAR, error) {
 			entry := har.GetEntryByRequestId(params.RequestId)
 			if entry == nil {
 				//log.Fatal("got a response event with no matching request event.")
-				fmt.Println("got a response event with no matching request event.")
+				fmt.Println("got a response event with no matching request event. 3")
 			} else {
 				entry.Response.BodySize = params.EncodedDataLength - int64(entry.Response.HeadersSize)
 				entry.Response.Content.Compression = entry.Response.Content.Size - entry.Response.BodySize

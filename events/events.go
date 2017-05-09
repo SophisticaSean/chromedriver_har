@@ -5,7 +5,7 @@ import (
 	"errors"
 	"time"
 
-	"github.com/fedesog/webdriver"
+	"github.com/zuf/webdriver"
 )
 
 type ChromeEvent struct {
